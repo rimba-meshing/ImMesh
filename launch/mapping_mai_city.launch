@@ -1,0 +1,13 @@
+<launch>
+	<!-- Mai City dataset configuration - Background execution (no visualization) -->
+	
+	<rosparam command="load" file="$(find ImMesh)/config/mai_city.yaml" />
+	<param name="meshing/distance_scale" type="double" value="1.0" /> 
+	<param name="gui_font_size" type="int" value="20" /> 
+	
+	<!-- ImMesh mapping node -->
+	<node pkg="ImMesh" type="ImMesh_mapping" name="laserMapping" output="screen">
+	</node>
+	
+	<!-- No RViz for background execution -->
+</launch>
